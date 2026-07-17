@@ -1,0 +1,76 @@
+import { Car, BarChart2, CheckCircle, Zap, FileText, Settings, RefreshCw, TrendingUp, DollarSign, Clock } from 'lucide-react'
+
+export const caseStudies = [
+  {
+    id: 'car-auditor',
+    product: 'CarAuditor',
+    category: 'Fleet Management',
+    tagline: 'Ensure Fleet Excellence, One Audit at a Time',
+    accent: '#7C3AED',
+    accentRgb: '124,58,237',
+    icon: Car,
+    industry: 'Automotive / Logistics',
+    client: 'Fleet Operators & Car Rental Businesses',
+    overview: 'Fleet management companies struggle to keep their vehicles in top condition due to inconsistent inspection processes. Without a standardized audit system, identifying maintenance needs becomes reactive rather than proactive — leading to unexpected breakdowns, costly repairs, and operational downtime.',
+    solution: 'CarAuditor brings structure and intelligence to vehicle inspections. The platform enables fleet teams to conduct systematic, standardized vehicle assessments — flagging issues in real time, automating repair recommendations, and ensuring every vehicle in the fleet is evaluated consistently and on schedule.',
+    whoItsFor: 'Fleet managers, car rental businesses, and logistics companies that need to maintain vehicle quality, reduce unplanned downtime, and stay compliant with maintenance standards.',
+    problem: {
+      heading: 'The Problem',
+      points: [
+        'Inconsistent inspection processes across large fleets',
+        'Reactive maintenance leading to unexpected breakdowns',
+        'No centralized system to track vehicle health over time',
+        'Manual reporting that is slow, error-prone, and hard to act on',
+      ],
+    },
+    features: [
+      { icon: CheckCircle, title: 'Comprehensive Vehicle Audits',     desc: 'Conduct structured, standardized assessments for every vehicle in your fleet.' },
+      { icon: Zap,         title: 'Real-Time Issue Flagging',         desc: 'Identify and prioritize maintenance needs the moment they are detected.' },
+      { icon: Settings,    title: 'Automated Repair Recommendations', desc: 'AI-backed suggestions for necessary repairs based on audit findings.' },
+      { icon: FileText,    title: 'Customizable Inspection Checklists', desc: 'Tailor audit templates to match your fleet type and operational requirements.' },
+      { icon: TrendingUp,  title: 'Performance Tracking',             desc: 'Monitor vehicle health trends over time and spot recurring issues early.' },
+      { icon: RefreshCw,   title: 'Fleet-Wide Integration',           desc: 'Sync seamlessly with your existing fleet management software.' },
+    ],
+    impact: [
+      { metric: '40%', label: 'Reduction in unplanned downtime' },
+      { metric: '3×',  label: 'Faster inspection turnaround' },
+      { metric: '100%', label: 'Audit coverage across fleet' },
+    ],
+  },
+  {
+    id: 'car-metrik',
+    product: 'CarMetrik',
+    category: 'Car Valuation',
+    tagline: 'Smart Valuation, Smarter Deals',
+    accent: '#0EA5E9',
+    accentRgb: '14,165,233',
+    icon: BarChart2,
+    industry: 'Automotive / Used Car Market',
+    client: 'Used Car Dealers & Individual Sellers',
+    overview: 'Determining the right price for a used car is one of the biggest pain points for dealers and owners alike. Existing valuation methods rely on guesswork or outdated pricing models — leading to inaccurate pricing that results in lost profits, missed sales, and time-consuming negotiations.',
+    solution: 'CarMetrik automates the entire car valuation process by analyzing a vehicle\'s exterior condition, interior quality, mechanical health, refurbishment costs, and live market trends — delivering a precise, data-driven price estimate in minutes rather than hours.',
+    whoItsFor: 'Used car dealers, individual car sellers, and buyers who need accurate, transparent, and data-backed valuations to make confident decisions.',
+    problem: {
+      heading: 'The Problem',
+      points: [
+        'Valuations based on gut feel rather than real data',
+        'No easy way to factor in refurbishment and repair costs',
+        'Market price comparisons done manually and inconsistently',
+        'Negotiations drag on due to lack of trusted pricing references',
+      ],
+    },
+    features: [
+      { icon: Zap,         title: 'AI-Powered Car Valuation',       desc: 'Get accurate price predictions based on real-time market data and vehicle condition.' },
+      { icon: CheckCircle, title: 'Condition-Based Pricing',        desc: 'Factor in exterior, interior, and mechanical condition for a holistic valuation.' },
+      { icon: DollarSign,  title: 'Refurbishment Cost Estimation',  desc: 'Know the potential repair expenses upfront before committing to a purchase.' },
+      { icon: TrendingUp,  title: 'Market Trend Analysis',          desc: 'Compare prices with similar vehicles currently listed in the market.' },
+      { icon: FileText,    title: 'Instant Valuation Reports',      desc: 'Generate shareable reports for transparent, easy decision-making.' },
+      { icon: Clock,       title: 'Smart Negotiation Insights',     desc: 'Data-backed insights that help both dealers and buyers optimize their deal.' },
+    ],
+    impact: [
+      { metric: '60%',    label: 'Faster valuation process' },
+      { metric: '±3%',    label: 'Pricing accuracy vs market' },
+      { metric: '2×',     label: 'More deals closed per week' },
+    ],
+  },
+]
