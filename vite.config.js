@@ -5,6 +5,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  assetsInclude: ['**/*.mpeg', '**/*.mp3', '**/*.wav', '**/*.ogg'],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

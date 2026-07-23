@@ -31,7 +31,7 @@ export default function CaseStudies({ onOpenStudy }) {
             className="text-body max-w-xl"
             style={{ fontSize: '1.0625rem' }}
           >
-            Real products built for real problems. Here's a look at two of the solutions we've shipped.
+            A real solution built for a real problem. Here's a look at how we're transforming sales with AI.
           </motion.p>
         </motion.div>
 
@@ -41,7 +41,7 @@ export default function CaseStudies({ onOpenStudy }) {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="grid grid-cols-1 gap-6 lg:grid-cols-2"
+          className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:max-w-2xl lg:mx-auto"
         >
           {caseStudies.map((study, i) => (
             <CaseStudyCard key={study.id} study={study} onOpen={onOpenStudy} index={i} />

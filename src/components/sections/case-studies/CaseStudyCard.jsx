@@ -93,7 +93,7 @@ export default function CaseStudyCard({ study, onOpen, index }) {
 
         {/* CTA */}
         <div className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: accent }}>
-          Read Case Study
+          View Challenge & Solution
           <ArrowUpRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>
       </div>

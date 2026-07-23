@@ -233,7 +233,9 @@ export default function CaseStudyDetailPage({ study, onClose }) {
                 Our Solution
               </motion.h2>
               <motion.p variants={fadeUp} className="text-sm leading-relaxed" style={{ color: 'var(--color-muted)' }}>
-                {solution}
+                {solution.split('\n\n').map((para, i) => (
+                  <span key={i}>{para}{i < solution.split('\n\n').length - 1 && <><br /><br /></>}</span>
+                ))}
               </motion.p>
               <motion.div
                 variants={fadeUp}
@@ -243,43 +245,13 @@ export default function CaseStudyDetailPage({ study, onClose }) {
                   border: `1px solid rgba(${accentRgb},0.15)`,
                 }}
               >
-                <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: accent }}>Who it's for</p>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: accent }}>Outcome</p>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--color-muted)' }}>{whoItsFor}</p>
               </motion.div>
             </motion.div>
           </div>
 
-          {/* Features */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            className="flex flex-col gap-10"
-          >
-            <motion.div variants={fadeUp} className="flex flex-col gap-2">
-              <h2
-                className="text-heading"
-                style={{ fontSize: 'var(--text-h2)' }}
-              >
-                Key <span style={{ color: accent }}>Features</span>
-              </h2>
-              <p className="text-sm" style={{ color: 'var(--color-muted)' }}>
-                Everything built into {product} to solve the problem end-to-end.
-              </p>
-            </motion.div>
 
-            <motion.div
-              variants={staggerContainer}
-              className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {features.map(f => (
-                <motion.div key={f.title} variants={fadeUp}>
-                  <FeatureCard {...f} accent={accent} accentRgb={accentRgb} isLight={isLight} />
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
 
         </div>
       </div>
