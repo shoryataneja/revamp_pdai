@@ -65,7 +65,7 @@ function HamburgerIcon({ isOpen }) {
   )
 }
 
-function NavLink({ href, label, onClick }) {
+function NavLink({ href, label, onClick, isPage }) {
   const [hovered, setHovered] = useState(false)
   return (
     <a
@@ -74,7 +74,10 @@ function NavLink({ href, label, onClick }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative flex flex-col items-center gap-0.5 text-sm py-1"
-      style={{ color: hovered ? 'var(--color-text)' : 'var(--color-muted)', transition: 'color 200ms' }}
+      style={{
+        color: hovered ? 'var(--color-text)' : isPage ? 'var(--color-purple-accent)' : 'var(--color-muted)',
+        transition: 'color 200ms',
+      }}
     >
       {label}
       <motion.span
@@ -181,9 +184,9 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-7">
-            {navLinks.map(({ label, href }) => (
+            {navLinks.map(({ label, href, isPage }) => (
               <li key={href}>
-                <NavLink href={href} label={label} />
+                <NavLink href={href} label={label} isPage={isPage} />
               </li>
             ))}
           </ul>

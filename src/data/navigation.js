@@ -4,4 +4,5 @@ export const navLinks = [
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Team',         href: '#team' },
   { label: 'Careers',      href: '#careers' },
+  { label: 'Layouts',      href: '#/layouts', isPage: true },
 ]
