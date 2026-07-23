@@ -113,9 +113,9 @@ function Layout1({ sectionRef }) {
         ))}
       </div>
 
-      {/* Floating orbs */}
-      <div className="pointer-events-none absolute rounded-full" style={{ width: 120, height: 120, left: '6%', top: '30%', background: 'radial-gradient(circle at 40% 40%, #c084fc, #7c3aed)', filter: 'blur(2px)', opacity: 0.85 }} />
-      <div className="pointer-events-none absolute rounded-full" style={{ width: 72, height: 72, right: '8%', top: '42%', background: 'radial-gradient(circle at 40% 40%, #e9d5ff, #a855f7)', filter: 'blur(1px)', opacity: 0.75 }} />
+      {/* Floating orbs — pushed to edges away from content */}
+      <div className="pointer-events-none absolute rounded-full" style={{ width: 120, height: 120, left: '2%', top: '12%', background: 'radial-gradient(circle at 40% 40%, #c084fc, #7c3aed)', filter: 'blur(18px)', opacity: 0.5 }} />
+      <div className="pointer-events-none absolute rounded-full" style={{ width: 72, height: 72, right: '4%', bottom: '15%', background: 'radial-gradient(circle at 40% 40%, #e9d5ff, #a855f7)', filter: 'blur(12px)', opacity: 0.45 }} />
 
       {/* Glow */}
       <div className="pointer-events-none absolute" style={{ width: 700, height: 400, top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 70%)' }} />
@@ -137,8 +137,10 @@ function Layout1({ sectionRef }) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="flex flex-col gap-8"
+          className="flex flex-col gap-8 relative"
         >
+          {/* Dark backdrop so text is always readable */}
+          <div className="pointer-events-none absolute -inset-6 rounded-2xl" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(13,13,18,0.7) 0%, transparent 80%)' }} />
           <h1
             style={{
               fontFamily: 'var(--font-heading)',
