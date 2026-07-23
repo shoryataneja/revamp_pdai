@@ -1,4 +1,4 @@
-import { Lightbulb, Zap, Users, Unlock, Heart, BarChart2, Package, BookOpen, Coffee, TrendingUp } from 'lucide-react'
+import { Lightbulb, Zap, Users, Unlock, Heart, BarChart2, Package, BookOpen, Coffee, TrendingUp, Star, Target, CheckCircle, ArrowUpRight, Eye, Rocket } from 'lucide-react'
 
 export const careersHero = {
   title: 'Come build what millions see every day',
@@ -6,10 +6,12 @@ export const careersHero = {
 }
 
 export const coreValues = [
-  { icon: Lightbulb, label: 'Thinking Big, Being Entrepreneurial' },
-  { icon: Zap,       label: 'Being Passionate, Fanatically Driven & Proud' },
-  { icon: Users,     label: 'Taking Ownership, Being Accountable' },
-  { icon: Unlock,    label: 'Enjoying Freedom with Integrity' },
+  { icon: Star,         label: 'Go Above and Beyond',       description: 'Do more than expected. Deliver more than promised.' },
+  { icon: Heart,        label: 'Customer Centricity',        description: 'Put the customer at the heart of every decision.' },
+  { icon: Target,       label: 'Ownership-Driven Culture',   description: 'Own your work, your decisions, and their outcomes.' },
+  { icon: Rocket,       label: 'Making Things Happen',       description: 'Turn ideas into action and action into results.' },
+  { icon: Eye,          label: 'Complete Transparency',      description: 'Be honest, be open, and communicate with clarity.' },
+  { icon: ArrowUpRight, label: 'Progress Over Perfection',   description: 'Keep moving forward—done is better than perfect.' },
 ]
 
 export const openRoles = [

@@ -12,7 +12,7 @@ function describeArc(cx, cy, r, startAngle, endAngle) {
   return `M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}`
 }
 
-function ValueCard({ icon: Icon, label, isLight }) {
+function ValueCard({ icon: Icon, label, description, isLight }) {
   return (
     <motion.div
       variants={fadeUp}
@@ -44,12 +44,17 @@ function ValueCard({ icon: Icon, label, isLight }) {
         </div>
       </div>
 
-      <span
-        className="text-lg font-semibold leading-snug"
-        style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}
-      >
-        {label}
-      </span>
+      <div className="flex flex-col gap-1">
+        <span
+          className="text-lg font-semibold leading-snug"
+          style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}
+        >
+          {label}
+        </span>
+        <span className="text-sm leading-relaxed" style={{ color: 'var(--color-muted)' }}>
+          {description}
+        </span>
+      </div>
     </motion.div>
   )
 }

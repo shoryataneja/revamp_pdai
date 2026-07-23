@@ -45,11 +45,6 @@ function LogoPill({ name, svg, width }) {
 
 /* ── Section ────────────────────────────────────────────────────── */
 export default function TrustedBy() {
-  /* Split clients into two rows for the dual-marquee layout */
-  const half = Math.ceil(clients.length / 2)
-  const rowA = clients.slice(0, half)
-  const rowB = clients.slice(half)
-
   return (
     <section
       id="trusted-by"
@@ -90,16 +85,9 @@ export default function TrustedBy() {
           </p>
         </motion.div>
 
-        {/* Row A — scrolls left */}
+        {/* Single row — scrolls left */}
         <Marquee speed={28} direction="left" className="py-1">
-          {rowA.map(client => (
-            <LogoPill key={client.id} {...client} />
-          ))}
-        </Marquee>
-
-        {/* Row B — scrolls right (opposite direction adds depth) */}
-        <Marquee speed={22} direction="right" className="py-1">
-          {rowB.map(client => (
+          {clients.map(client => (
             <LogoPill key={client.id} {...client} />
           ))}
         </Marquee>
