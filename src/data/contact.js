@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Clock } from 'lucide-react'
+import { MapPin, Mail, Phone } from 'lucide-react'
 
 export const contactHeading = {
   title: "Let's Build Something Intelligent",
@@ -32,13 +32,8 @@ export const contactInfo = [
     lines: ['+91 8951732099'],
     href: 'tel:+918951732099',
   },
-  {
-    id: 'hours',
-    icon: Clock,
-    label: 'Working Hours',
-    lines: ['Monday – Friday: 9:00 AM – 6:00 PM', 'Saturday: 10:00 AM – 2:00 PM', 'Sunday: Closed'],
-  },
 ]
+
 
 export const formFields = [
   { id: 'name',    label: 'Full Name',      type: 'text',     placeholder: 'John Smith',              required: true,  half: true  },

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiInstagram, FiLinkedin, FiGithub } from 'react-icons/fi'
+import { FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react'
 import { siteConfig } from '@data/siteConfig'
 import { products } from '@data/products'
@@ -18,7 +18,6 @@ const quickLinks = [
 const socialLinks = [
   { icon: FiLinkedin,  href: siteConfig.social.linkedin,  label: 'LinkedIn'  },
   { icon: FiInstagram, href: siteConfig.social.instagram, label: 'Instagram' },
-  { icon: FiGithub,    href: siteConfig.social.github,    label: 'GitHub'    },
 ]
 
 const contactDetails = [

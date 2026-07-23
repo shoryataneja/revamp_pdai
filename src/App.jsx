@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import RootLayout from '@layout/RootLayout'
 import Hero from '@sections/Hero'
-import Stats from '@sections/Stats'
 import Products from '@sections/Products'
 import TrustedBy from '@sections/TrustedBy'
 import ProductShowcase from '@sections/ProductShowcase'
@@ -38,7 +37,6 @@ export default function App() {
   return (
     <RootLayout>
       <Hero />
-      <Stats />
       <TrustedBy />
       <Products />
       <ProductShowcase />

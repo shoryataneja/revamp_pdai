@@ -15,7 +15,7 @@ const tabItems = {
 }
 
 export default function Team() {
-  const [activeTab, setActiveTab] = useState('team')
+  const [activeTab, setActiveTab] = useState('culture')
 
   const items = tabItems[activeTab]
 

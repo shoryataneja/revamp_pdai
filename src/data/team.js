@@ -20,8 +20,8 @@ export const teamGalleryMeta = {
 }
 
 export const teamTabs = [
-  { id: 'team',      label: 'Management'     },
   { id: 'culture',   label: 'Team & Culture' },
+  { id: 'team',      label: 'Management'     },
   { id: 'workspace', label: 'Workspace'      },
 ]
 
