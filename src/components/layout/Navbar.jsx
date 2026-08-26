@@ -194,8 +194,8 @@ export default function Navbar() {
           {/* Desktop — theme toggle + CTA */}
           <div className="hidden md:flex items-center gap-2">
             <ThemeToggle theme={theme} toggle={toggle} />
-            <Button as="a" href="#contact" size="sm">
-              Contact Us
+            <Button as="a" href="#demo" size="sm">
+              See It In Action
             </Button>
           </div>
 
@@ -231,7 +231,7 @@ export default function Navbar() {
               style={{ width: 400, height: 400, top: -100, right: -100, opacity: 0.5 }}
             />
 
-            <div className="flex flex-1 flex-col justify-center container-site">
+            <div className="flex flex-1 flex-col justify-center container-site overflow-y-auto py-8">
               <ul className="flex flex-col gap-1">
                 {navLinks.map(({ label, href }, i) => (
                   <motion.li
@@ -249,7 +249,7 @@ export default function Navbar() {
                       style={{ borderColor: 'var(--color-border)' }}
                     >
                       <span
-                        className="text-3xl font-semibold tracking-tight transition-smooth"
+                        className="text-2xl font-semibold tracking-tight transition-smooth"
                         style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}
                       >
                         {label}
@@ -274,8 +274,8 @@ export default function Navbar() {
                 exit="closed"
                 className="mt-10"
               >
-                <Button as="a" href="#contact" size="lg" className="w-full justify-center" onClick={closeMenu}>
-                  Contact Us
+                <Button as="a" href="#demo" size="lg" className="w-full justify-center" onClick={closeMenu}>
+                  See It In Action
                 </Button>
               </motion.div>
             </div>

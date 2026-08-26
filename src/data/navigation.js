@@ -1,8 +1,9 @@
 export const navLinks = [
-  { label: 'Home',         href: '#hero' },
-  { label: 'Products',     href: '#products' },
-  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'How It Works', href: '#work' },
+  { label: 'Use Cases',    href: '#use-cases' },
+  { label: 'Demo',         href: '#demo' },
   { label: 'Team',         href: '#team' },
+  { label: 'Case Studies', href: '#case-studies' },
   { label: 'Careers',      href: '#careers' },
-  { label: 'Layouts',      href: '#/layouts', isPage: true },
+  { label: 'Contact',      href: '#contact' },
 ]

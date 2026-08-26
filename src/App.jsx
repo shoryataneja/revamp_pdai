@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import RootLayout from '@layout/RootLayout'
 import Hero from '@sections/Hero'
-import Products from '@sections/Products'
-import TrustedBy from '@sections/TrustedBy'
-import ProductShowcase from '@sections/ProductShowcase'
+import Problem from '@sections/Problem'
+import Workflow from '@sections/Workflow'
+import Differentiation from '@sections/Differentiation'
+import UseCases from '@sections/UseCases'
+import Demo from '@sections/Demo'
+import Roadmap from '@sections/Roadmap'
 import Team from '@sections/Team'
 import CaseStudies from '@sections/CaseStudies'
 import Careers from '@sections/Careers'
+import TrustedBy from '@sections/TrustedBy'
 import Contact from '@sections/Contact'
 import JobDetailPage from '@sections/careers/JobDetailPage'
 import CaseStudyDetailPage from '@sections/case-studies/CaseStudyDetailPage'
@@ -53,8 +57,12 @@ export default function App() {
   return (
     <RootLayout>
       <Hero />
-      <Products />
-      <ProductShowcase />
+      <Problem />
+      <Workflow />
+      <Differentiation />
+      <UseCases />
+      <Demo />
+      <Roadmap />
       <Team />
       <CaseStudies onOpenStudy={setActiveStudy} />
       <Careers onOpenJob={setActiveJob} />

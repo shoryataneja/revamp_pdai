@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import HeroCopy from './hero/HeroCopy'
-import AIDashboard from './hero/AIDashboard'
+import VideoPlaceholder from './hero/VideoPlaceholder'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -63,7 +63,7 @@ export default function Hero() {
 
       {/* ── Content ── */}
       <div className="container-site relative z-10 w-full pt-28 pb-20 lg:pt-32 lg:pb-24">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
           {/* Left — copy */}
           <HeroCopy />
 
@@ -83,7 +83,7 @@ export default function Hero() {
                   filter: 'blur(24px)',
                 }}
               />
-              <AIDashboard />
+              <VideoPlaceholder />
             </div>
           </motion.div>
         </div>

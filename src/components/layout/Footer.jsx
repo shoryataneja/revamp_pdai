@@ -2,17 +2,18 @@ import { motion } from 'framer-motion'
 import { FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react'
 import { siteConfig } from '@data/siteConfig'
-import { products } from '@data/products'
+import { useCases } from '@data/useCases'
 import Divider from '@ui/Divider'
 import { useTheme } from '@hooks/useTheme'
 
 const EASE = [0.16, 1, 0.3, 1]
 
 const quickLinks = [
-  { label: 'Home',     href: '#hero'     },
-  { label: 'Products', href: '#products' },
-  { label: 'Careers',  href: '#careers'  },
-  { label: 'Contact',  href: '#contact'  },
+  { label: 'How It Works', href: '#work'      },
+  { label: 'Use Cases',    href: '#use-cases' },
+  { label: 'Demo',         href: '#demo'      },
+  { label: 'Careers',      href: '#careers'   },
+  { label: 'Contact',      href: '#contact'   },
 ]
 
 const socialLinks = [
@@ -187,13 +188,13 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* ── Col 3: Products ── */}
+            {/* ── Col 3: Use Cases ── */}
             <div>
-              <ColHeading>Products</ColHeading>
+              <ColHeading>Use Cases</ColHeading>
               <ul className="flex flex-col gap-3">
-                {products.map(({ id, name, href }) => (
+                {useCases.map(({ id, title }) => (
                   <li key={id}>
-                    <FooterLink href={href}>{name}</FooterLink>
+                    <FooterLink href="#use-cases">{title}</FooterLink>
                   </li>
                 ))}
               </ul>
