@@ -2,8 +2,6 @@ import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import videoSrc from '@assets/prizm360.mp4'
 
-const EASE = [0.16, 1, 0.3, 1]
-
 function fmt(s) {
   if (!s || isNaN(s)) return '0:00'
   const m = Math.floor(s / 60)

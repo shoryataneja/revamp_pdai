@@ -864,67 +864,6 @@ function Layout5({ sectionRef }) {
   )
 }
 
-/* ── Placeholder section (layout 5 fallback) ────────────────────── */
-function LayoutSection({ num, sectionRef }) {
-  const { theme } = useTheme()
-  const isLight = theme === 'light'
-
-  return (
-    <section
-      ref={sectionRef}
-      id={`layout-${num}`}
-      className="flex min-h-screen items-center justify-center px-6 py-24"
-      style={{ background: num % 2 === 0 ? 'var(--color-bg-secondary)' : 'var(--color-bg-primary)' }}
-    >
-      <div
-        className="glow-orb glow-orb-purple pointer-events-none"
-        style={{ width: 500, height: 500, top: '50%', left: '50%', transform: 'translate(-50%,-50%)', opacity: 0.12 }}
-      />
-      <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.7, ease: EASE }}
-        className="relative z-10 flex flex-col items-center gap-6 text-center max-w-xl w-full"
-      >
-        <span
-          className="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
-          style={{
-            background: 'rgba(124,58,237,0.1)',
-            border: '1px solid rgba(168,85,247,0.25)',
-            color: 'var(--color-purple-accent)',
-          }}
-        >
-          Layout {num}
-        </span>
-        <div
-          className="w-full rounded-2xl flex flex-col items-center justify-center gap-4 py-20 px-8"
-          style={{
-            border: '2px dashed rgba(168,85,247,0.2)',
-            background: isLight ? 'rgba(124,58,237,0.02)' : 'rgba(124,58,237,0.04)',
-          }}
-        >
-          <div
-            className="flex h-14 w-14 items-center justify-center rounded-2xl"
-            style={{ background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(168,85,247,0.2)' }}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-purple-accent)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
-            </svg>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h2 className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
-              Layout {num}
-            </h2>
-            <p className="text-sm" style={{ color: 'var(--color-subtle)' }}>Placeholder for Hero Design</p>
-          </div>
-        </div>
-      </motion.div>
-    </section>
-  )
-}
-
 /* ── Main page ──────────────────────────────────────────────────── */
 export default function LayoutsPage() {
   const { theme, toggle } = useTheme()
