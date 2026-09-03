@@ -1,12 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
-import Problem from './Problem'
-import Workflow from './Workflow'
-import Differentiation from './Differentiation'
-import UseCases from './UseCases'
-import Demo from './Demo'
-import Roadmap from './Roadmap'
 import Contact from './Contact'
 import { useTheme } from '@hooks/useTheme'
 
@@ -50,12 +44,6 @@ export default function Prizm360Page() {
       </div>
 
       <main className="flex-1">
-        <Problem />
-        <Workflow />
-        <Differentiation />
-        <UseCases />
-        <Demo />
-        <Roadmap />
         <Contact />
       </main>
     </motion.div>
