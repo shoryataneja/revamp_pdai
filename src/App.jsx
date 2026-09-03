@@ -50,7 +50,7 @@ export default function App() {
   return (
     <RootLayout>
       <Hero />
-      <Products />
+      <Products onOpenPrizm360={() => { window.location.hash = '#/prizm360' }} />
       <Team />
       <Careers onOpenJob={setActiveJob} />
       <TrustedBy />

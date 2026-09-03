@@ -35,7 +35,7 @@ function usePerView() {
   return perView
 }
 
-export default function ProductCarousel({ products }) {
+export default function ProductCarousel({ products, onOpenPrizm360 }) {
   const perView = usePerView()
   const { index, prev, next, goTo, maxIndex } = useCarousel(products.length, perView)
   const paused = useRef(false)
@@ -75,9 +75,9 @@ export default function ProductCarousel({ products }) {
           {products.map((product, i) => (
             <div
               key={product.id}
-              style={{ minWidth: `calc(100% / ${perView})`, padding: '0 10px' }}
+              style={{ minWidth: `calc(100% / ${perView})`, padding: '0 10px', height: '360px' }}
             >
-              <ProductCard product={product} index={i} />
+              <ProductCard product={product} index={i} onOpenPrizm360={onOpenPrizm360} />
             </div>
           ))}
         </div>

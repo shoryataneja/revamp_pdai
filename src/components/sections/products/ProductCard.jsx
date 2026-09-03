@@ -1,5 +1,4 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import { useRef } from 'react'
 import { useTheme } from '@hooks/useTheme'
 
@@ -57,8 +56,8 @@ function TagPill({ label, accent, accentRgb }) {
  * @param {object} product - product data object from products.js
  * @param {number} index   - used for stagger delay
  */
-export default function ProductCard({ product, index }) {
-  const { name, tagline, description, tags, accent, accentRgb, logoPath, href, isCTA } = product
+export default function ProductCard({ product, index, onOpenPrizm360 }) {
+  const { id, name, tagline, description, tags, accent, accentRgb, logoPath, href, isCTA } = product
   const { theme } = useTheme()
   const isLight = theme === 'light'
 
@@ -87,6 +86,7 @@ export default function ProductCard({ product, index }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.65, ease: EASE, delay: index * 0.08 }}
+        style={{ height: '100%' }}
       >
         <a
           href={href}
@@ -94,7 +94,6 @@ export default function ProductCard({ product, index }) {
           style={{
             border: `2px dashed rgba(${accentRgb}, 0.35)`,
             background: `rgba(${accentRgb}, 0.03)`,
-            minHeight: 280,
             transition: 'border-color 300ms, background 300ms',
           }}
           onMouseEnter={e => {
@@ -145,7 +144,7 @@ export default function ProductCard({ product, index }) {
               color: accent,
             }}
           >
-            Let's Talk <ArrowUpRight size={14} />
+            Let's Talk
           </span>
         </a>
       </motion.div>
@@ -158,16 +157,17 @@ export default function ProductCard({ product, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.65, ease: EASE, delay: index * 0.08 }}
-      style={{ perspective: 1000 }}
+      style={{ perspective: 1000, height: '100%' }}
     >
       <motion.article
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        onClick={id === 'prizm360' ? onOpenPrizm360 : undefined}
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d', height: '100%' }}
         whileHover={{ y: -6 }}
         transition={{ duration: 0.35, ease: EASE }}
-        className="group relative flex h-full flex-col rounded-2xl p-6 cursor-default"
+        className={`group relative flex h-full flex-col rounded-2xl p-6 ${id === 'prizm360' ? 'cursor-pointer' : 'cursor-default'}`}
         aria-label={name}
       >
         {/* Glass base */}
@@ -237,32 +237,16 @@ export default function ProductCard({ product, index }) {
             </div>
           )}
 
-          {/* Spacer pushes CTA to bottom */}
+          {/* Spacer pushes bottom area */}
           <div className="flex-1" />
 
-          {/* Divider */}
-          <div
-            className="h-px w-full"
-            style={{ background: `linear-gradient(90deg, rgba(${accentRgb}, 0.3) 0%, transparent 80%)` }}
-          />
-
-          {/* Visit Page CTA */}
-          <a
-            href={href}
-            className="inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-200"
-            style={{ color: accent }}
-            aria-label={`Visit ${name} page`}
-          >
-            Visit Page
-            <motion.span
-              className="inline-flex"
-              animate={{ x: 0, y: 0 }}
-              whileHover={{ x: 2, y: -2 }}
-              transition={{ duration: 0.2 }}
-            >
-              <ArrowUpRight size={15} strokeWidth={2.25} />
-            </motion.span>
-          </a>
+          {/* Divider — only for prizm360 to hint clickability */}
+          {id === 'prizm360' && (
+            <div
+              className="h-px w-full"
+              style={{ background: `linear-gradient(90deg, rgba(${accentRgb}, 0.3) 0%, transparent 80%)` }}
+            />
+          )}
         </div>
       </motion.article>
     </motion.div>

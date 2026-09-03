@@ -3,7 +3,7 @@ import SectionHeading from '@ui/SectionHeading'
 import ProductCarousel from './products/ProductCarousel'
 import { products, productsHeading } from '@data/products'
 
-export default function Products() {
+export default function Products({ onOpenPrizm360 }) {
   return (
     <SectionWrapper id="products" wrapperClassName="overflow-hidden">
       {/* Ambient orbs */}
@@ -25,7 +25,7 @@ export default function Products() {
         />
 
         {/* Carousel */}
-        <ProductCarousel products={products} />
+        <ProductCarousel products={products} onOpenPrizm360={onOpenPrizm360} />
       </div>
     </SectionWrapper>
   )
