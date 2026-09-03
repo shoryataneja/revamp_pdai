@@ -194,7 +194,7 @@ export default function Navbar() {
           {/* Desktop — theme toggle + CTA */}
           <div className="hidden md:flex items-center gap-2">
             <ThemeToggle theme={theme} toggle={toggle} />
-            <Button as="a" href="#demo" size="sm">
+            <Button as="a" href="#/prizm360" size="sm">
               See It In Action
             </Button>
           </div>
@@ -274,7 +274,7 @@ export default function Navbar() {
                 exit="closed"
                 className="mt-10"
               >
-                <Button as="a" href="#demo" size="lg" className="w-full justify-center" onClick={closeMenu}>
+                <Button as="a" href="#/prizm360" size="lg" className="w-full justify-center" onClick={closeMenu}>
                   See It In Action
                 </Button>
               </motion.div>

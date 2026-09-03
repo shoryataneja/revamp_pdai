@@ -1,7 +1,7 @@
 import { Play } from 'lucide-react'
 
 /**
- * Reserved, empty slot for the Prism360 demo video.
+ * Reserved, empty slot for the Prizm360 demo video.
  * No media is rendered here — just an empty 16:9 frame with a title.
  */
 export default function VideoPlaceholder() {

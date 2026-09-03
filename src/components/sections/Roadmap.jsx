@@ -3,6 +3,7 @@ import SectionWrapper from '@ui/SectionWrapper'
 import SectionHeading from '@ui/SectionHeading'
 import { roadmapHeading, implementationSteps, roadmapPhases } from '@data/roadmap'
 import { fadeUp, staggerContainer, viewport } from '@utils/animations'
+import { useTheme } from '@hooks/useTheme'
 
 function StatusBadge({ live, status }) {
   const liveStyles = {
@@ -27,6 +28,8 @@ function StatusBadge({ live, status }) {
 }
 
 export default function Roadmap() {
+  const { theme } = useTheme()
+  const isLight = theme === 'light'
   return (
     <SectionWrapper id="roadmap" wrapperClassName="overflow-hidden">
       <div
@@ -53,7 +56,10 @@ export default function Roadmap() {
               key={step}
               variants={fadeUp}
               className="flex flex-col gap-2 rounded-2xl p-5"
-              style={{ background: 'var(--color-card-bg)', border: '1px solid var(--color-card-border)' }}
+              style={{
+                background: isLight ? 'rgba(124,58,237,0.07)' : 'rgba(124,58,237,0.12)',
+                border: `1px solid ${isLight ? 'rgba(124,58,237,0.15)' : 'rgba(124,58,237,0.22)'}`,
+              }}
             >
               <span
                 className="text-xs font-bold"
@@ -85,8 +91,12 @@ export default function Roadmap() {
               variants={fadeUp}
               className="flex flex-col gap-3 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between"
               style={{
-                background: live ? 'rgba(52,211,153,0.04)' : 'var(--color-card-bg)',
-                border: live ? '1px solid rgba(52,211,153,0.22)' : '1px solid var(--color-card-border)',
+                background: live
+                  ? 'rgba(52,211,153,0.04)'
+                  : isLight ? 'rgba(124,58,237,0.07)' : 'rgba(124,58,237,0.12)',
+                border: live
+                  ? '1px solid rgba(52,211,153,0.22)'
+                  : `1px solid ${isLight ? 'rgba(124,58,237,0.15)' : 'rgba(124,58,237,0.22)'}`,
               }}
             >
               <div className="flex flex-col gap-1">

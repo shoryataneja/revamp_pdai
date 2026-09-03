@@ -1,20 +1,14 @@
 import { useState, useEffect } from 'react'
 import RootLayout from '@layout/RootLayout'
 import Hero from '@sections/Hero'
-import Problem from '@sections/Problem'
-import Workflow from '@sections/Workflow'
-import Differentiation from '@sections/Differentiation'
-import UseCases from '@sections/UseCases'
-import Demo from '@sections/Demo'
-import Roadmap from '@sections/Roadmap'
+import Products from '@sections/Products'
 import Team from '@sections/Team'
-import CaseStudies from '@sections/CaseStudies'
 import Careers from '@sections/Careers'
 import TrustedBy from '@sections/TrustedBy'
 import Contact from '@sections/Contact'
 import JobDetailPage from '@sections/careers/JobDetailPage'
-import CaseStudyDetailPage from '@sections/case-studies/CaseStudyDetailPage'
 import LayoutsPage from '@sections/LayoutsPage'
+import Prizm360Page from '@sections/Prizm360Page'
 import { useLenis } from '@hooks/useLenis'
 import { AnimatePresence } from 'framer-motion'
 
@@ -32,10 +26,17 @@ export default function App() {
   useLenis()
   const hash = useHashRoute()
   const [activeJob, setActiveJob] = useState(null)
-  const [activeStudy, setActiveStudy] = useState(null)
 
   if (hash === '#/layouts') {
     return <LayoutsPage />
+  }
+
+  if (hash === '#/prizm360') {
+    return (
+      <AnimatePresence mode="wait">
+        <Prizm360Page />
+      </AnimatePresence>
+    )
   }
 
   if (activeJob) {
@@ -46,25 +47,11 @@ export default function App() {
     )
   }
 
-  if (activeStudy) {
-    return (
-      <AnimatePresence mode="wait">
-        <CaseStudyDetailPage key={activeStudy.id} study={activeStudy} onClose={() => setActiveStudy(null)} />
-      </AnimatePresence>
-    )
-  }
-
   return (
     <RootLayout>
       <Hero />
-      <Problem />
-      <Workflow />
-      <Differentiation />
-      <UseCases />
-      <Demo />
-      <Roadmap />
+      <Products />
       <Team />
-      <CaseStudies onOpenStudy={setActiveStudy} />
       <Careers onOpenJob={setActiveJob} />
       <TrustedBy />
       <Contact />

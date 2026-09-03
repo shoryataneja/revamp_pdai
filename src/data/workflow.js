@@ -1,7 +1,7 @@
 export const workflowHeading = {
   title: 'From lead creation to next action — automatically.',
   subtitle:
-    'Prism360 turns a lead entering your CRM into a completed next action, without manual latency.',
+    'Prizm360 turns a lead entering your CRM into a completed next action, without manual latency.',
 }
 
 export const workflowSteps = [

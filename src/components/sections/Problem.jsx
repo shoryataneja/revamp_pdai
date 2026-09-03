@@ -31,7 +31,7 @@ export default function Problem() {
           style={{ fontSize: '1.0625rem' }}
         >
           Every new lead creates another manual chain: noticing, calling, chasing, and updating.
-          Prism360 automates the repeatable layer so your next action doesn&apos;t depend on manual memory.
+          Prizm360 automates the repeatable layer so your next action doesn&apos;t depend on manual memory.
         </motion.p>
       </motion.div>
     </SectionWrapper>

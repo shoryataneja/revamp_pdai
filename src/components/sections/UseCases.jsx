@@ -5,8 +5,11 @@ import SectionHeading from '@ui/SectionHeading'
 import Button from '@ui/Button'
 import { useCasesHeading, useCases } from '@data/useCases'
 import { fadeUp, staggerContainer, viewport } from '@utils/animations'
+import { useTheme } from '@hooks/useTheme'
 
 export default function UseCases() {
+  const { theme } = useTheme()
+  const isLight = theme === 'light'
   return (
     <SectionWrapper id="use-cases" wrapperClassName="overflow-hidden">
       <div
@@ -37,7 +40,10 @@ export default function UseCases() {
               key={id}
               variants={fadeUp}
               className="group flex flex-col gap-4 rounded-2xl p-6 transition-colors duration-200"
-              style={{ background: 'var(--color-card-bg)', border: '1px solid var(--color-card-border)' }}
+              style={{
+                background: isLight ? 'rgba(124,58,237,0.07)' : 'rgba(124,58,237,0.12)',
+                border: `1px solid ${isLight ? 'rgba(124,58,237,0.15)' : 'rgba(124,58,237,0.22)'}`,
+              }}
             >
               <div
                 className="flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-200"

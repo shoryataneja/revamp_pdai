@@ -3,8 +3,11 @@ import SectionWrapper from '@ui/SectionWrapper'
 import SectionHeading from '@ui/SectionHeading'
 import { workflowHeading, workflowSteps } from '@data/workflow'
 import { fadeUp, staggerContainer, viewport } from '@utils/animations'
+import { useTheme } from '@hooks/useTheme'
 
 export default function Workflow() {
+  const { theme } = useTheme()
+  const isLight = theme === 'light'
   return (
     <SectionWrapper id="work" wrapperClassName="overflow-hidden">
       <div
@@ -40,7 +43,13 @@ export default function Workflow() {
                 />
               )}
 
-              <div className="flex flex-col gap-3 rounded-2xl p-5" style={{ background: 'var(--color-card-bg)', border: '1px solid var(--color-card-border)' }}>
+              <div
+                className="flex flex-col gap-3 rounded-2xl p-5"
+                style={{
+                  background: isLight ? 'rgba(124,58,237,0.07)' : 'rgba(124,58,237,0.12)',
+                  border: `1px solid ${isLight ? 'rgba(124,58,237,0.15)' : 'rgba(124,58,237,0.22)'}`,
+                }}
+              >
                 <span
                   className="flex h-10 w-10 items-center justify-center rounded-xl text-sm font-bold"
                   style={{

@@ -3,7 +3,7 @@ import { Users, Zap, Repeat, PhoneCall, BarChart2 } from 'lucide-react'
 export const useCasesHeading = {
   title: 'Automate the conversations your team repeats every day.',
   subtitle:
-    'Prism360 removes the manual layer from the conversations that already happen in your business — automatically.',
+    'Prizm360 removes the manual layer from the conversations that already happen in your business — automatically.',
 }
 
 export const useCases = [

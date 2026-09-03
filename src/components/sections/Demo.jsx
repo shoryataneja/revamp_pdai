@@ -4,8 +4,11 @@ import SectionWrapper from '@ui/SectionWrapper'
 import SectionHeading from '@ui/SectionHeading'
 import { demoHeading, benchmark } from '@data/demo'
 import { fadeUp, staggerContainer, viewport } from '@utils/animations'
+import { useTheme } from '@hooks/useTheme'
 
 export default function Demo() {
+  const { theme } = useTheme()
+  const isLight = theme === 'light'
   return (
     <SectionWrapper id="demo" wrapperClassName="overflow-hidden">
       <div
@@ -30,16 +33,18 @@ export default function Demo() {
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{
-              background: 'rgba(14, 14, 20, 0.85)',
+              background: isLight ? '#ffffff' : 'rgba(14,14,20,0.85)',
               backdropFilter: 'blur(24px)',
-              border: '1px solid rgba(45, 45, 66, 0.8)',
-              boxShadow: '0 32px 80px rgba(0,0,0,0.5), 0 0 60px rgba(124,58,237,0.12)',
+              border: `1px solid ${isLight ? 'rgba(124,58,237,0.15)' : 'rgba(45,45,66,0.8)'}`,
+              boxShadow: isLight
+                ? '0 4px 24px rgba(124,58,237,0.08), 0 1px 3px rgba(0,0,0,0.06)'
+                : '0 32px 80px rgba(0,0,0,0.5), 0 0 60px rgba(124,58,237,0.12)',
             }}
           >
             {/* Header */}
             <div
               className="flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 border-b"
-              style={{ borderColor: 'rgba(45,45,66,0.6)' }}
+              style={{ borderColor: isLight ? 'rgba(124,58,237,0.12)' : 'rgba(45,45,66,0.6)' }}
             >
               <div className="flex items-center gap-2.5">
                 <Timer size={16} style={{ color: 'var(--color-purple-accent)' }} />
@@ -69,8 +74,10 @@ export default function Demo() {
                   variants={fadeUp}
                   className="flex items-center gap-4 px-4 py-3 sm:px-6 sm:py-4"
                   style={{
-                    background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent',
-                    borderTop: i !== 0 ? '1px solid rgba(45,45,66,0.4)' : 'none',
+                    background: i % 2 === 0
+                      ? isLight ? 'rgba(124,58,237,0.03)' : 'rgba(255,255,255,0.02)'
+                      : 'transparent',
+                    borderTop: i !== 0 ? `1px solid ${isLight ? 'rgba(124,58,237,0.08)' : 'rgba(45,45,66,0.4)'}` : 'none',
                   }}
                 >
                   <div className="flex min-w-0 flex-1 flex-col gap-0.5">
