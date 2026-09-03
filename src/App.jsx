@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import RootLayout from '@layout/RootLayout'
 import Hero from '@sections/Hero'
 import Products from '@sections/Products'
