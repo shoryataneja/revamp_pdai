@@ -56,6 +56,8 @@ function TagPill({ label, accent, accentRgb }) {
  * @param {object} product - product data object from products.js
  * @param {number} index   - used for stagger delay
  */
+const DETAIL_PAGES = ['prizm360', 'agentic-ai']
+
 export default function ProductCard({ product, index, onOpenPrizm360 }) {
   const { id, name, tagline, description, tags, accent, accentRgb, logoPath, href, isCTA } = product
   const { theme } = useTheme()
@@ -163,11 +165,11 @@ export default function ProductCard({ product, index, onOpenPrizm360 }) {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        onClick={id === 'prizm360' ? onOpenPrizm360 : undefined}
+        onClick={DETAIL_PAGES.includes(id) ? onOpenPrizm360 : undefined}
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d', height: '100%' }}
         whileHover={{ y: -6 }}
         transition={{ duration: 0.35, ease: EASE }}
-        className={`group relative flex h-full flex-col rounded-2xl p-6 ${id === 'prizm360' ? 'cursor-pointer' : 'cursor-default'}`}
+        className={`group relative flex h-full flex-col rounded-2xl p-6 ${DETAIL_PAGES.includes(id) ? 'cursor-pointer' : 'cursor-default'}`}
         aria-label={name}
       >
         {/* Glass base */}
@@ -240,13 +242,32 @@ export default function ProductCard({ product, index, onOpenPrizm360 }) {
           {/* Spacer pushes bottom area */}
           <div className="flex-1" />
 
-          {/* Divider — only for prizm360 to hint clickability */}
-          {id === 'prizm360' && (
-            <div
-              className="h-px w-full"
-              style={{ background: `linear-gradient(90deg, rgba(${accentRgb}, 0.3) 0%, transparent 80%)` }}
-            />
-          )}
+          {/* Divider */}
+          <div
+            className="h-px w-full"
+            style={{ background: `linear-gradient(90deg, rgba(${accentRgb}, 0.3) 0%, transparent 80%)` }}
+          />
+
+          {/* To Know More */}
+          <button
+            onClick={e => {
+              e.stopPropagation()
+              if (DETAIL_PAGES.includes(id)) {
+                onOpenPrizm360()
+              } else {
+                window.location.hash = '#contact'
+              }
+            }}
+            className="flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
+            style={{ color: accent, background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            To Know More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </motion.article>
     </motion.div>

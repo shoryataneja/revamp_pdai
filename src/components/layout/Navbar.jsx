@@ -191,12 +191,9 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop — theme toggle + CTA */}
+          {/* Desktop — theme toggle */}
           <div className="hidden md:flex items-center gap-2">
             <ThemeToggle theme={theme} toggle={toggle} />
-            <Button as="a" href="#/prizm360" size="sm">
-              See It In Action
-            </Button>
           </div>
 
           {/* Mobile — theme toggle + hamburger */}
@@ -267,17 +264,7 @@ export default function Navbar() {
                 ))}
               </ul>
 
-              <motion.div
-                variants={mobileCtaVariants}
-                initial="closed"
-                animate="open"
-                exit="closed"
-                className="mt-10"
-              >
-                <Button as="a" href="#/prizm360" size="lg" className="w-full justify-center" onClick={closeMenu}>
-                  See It In Action
-                </Button>
-              </motion.div>
+
             </div>
 
             <motion.div

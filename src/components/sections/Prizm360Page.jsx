@@ -14,13 +14,13 @@ export default function Prizm360Page() {
   const { theme } = useTheme()
   const isLight = theme === 'light'
 
-  useEffect(() => { window.scrollTo(0, 0) }, [])
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       className="flex min-h-screen flex-col"
       style={{ background: 'var(--color-bg-primary)' }}

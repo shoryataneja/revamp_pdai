@@ -75,7 +75,7 @@ export default function ProductCarousel({ products, onOpenPrizm360 }) {
           {products.map((product, i) => (
             <div
               key={product.id}
-              style={{ minWidth: `calc(100% / ${perView})`, padding: '0 10px', height: '360px' }}
+              style={{ minWidth: `calc(100% / ${perView})`, padding: '0 10px', height: '420px' }}
             >
               <ProductCard product={product} index={i} onOpenPrizm360={onOpenPrizm360} />
             </div>
